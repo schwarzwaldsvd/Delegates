@@ -38,8 +38,7 @@ namespace EventsAndDelegates
 
         protected virtual void OnVideoEncoded(Video video) // Name: 'On'+<Name of the event>
         {
-            if (VideoEncoded != null)
-                VideoEncoded(this, new VideoEventArgs() { Video = video });
+            VideoEncoded?.Invoke(this, new VideoEventArgs() { Video = video });
         }
     }
 }
